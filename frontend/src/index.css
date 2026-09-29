@@ -1,0 +1,91 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  *,
+  html,
+  body,
+  button,
+  input,
+  select,
+  textarea,
+  h1, h2, h3, h4, h5, h6,
+  p, span, div, a, li, label, table, td, th {
+    font-family: 'Lato', sans-serif !important;
+  }
+
+  body {
+    background-color: #080C14;
+    color: #F8FAFC;
+    font-family: 'Lato', sans-serif !important;
+  }
+
+  /* Force Recharts SVG text elements & MapLibre UI to inherit Lato */
+  .recharts-text,
+  .recharts-legend-item-text,
+  .recharts-default-tooltip,
+  .maplibregl-popup-content,
+  .maplibregl-ctrl,
+  .maplibregl-ctrl button {
+    font-family: 'Lato', sans-serif !important;
+  }
+
+  /* Custom Sleek Dark Scrollbar */
+  ::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+  }
+  ::-webkit-scrollbar-track {
+    background: #080C14;
+  }
+  ::-webkit-scrollbar-thumb {
+    background: #1E293B;
+    border-radius: 9999px;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background: #334155;
+  }
+}
+
+@layer utilities {
+  .dark-card {
+    background-color: #0F172A;
+    border: 1px solid #1E293B;
+    border-radius: 16px;
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+  }
+  
+  .dark-card:hover {
+    border-color: #26334D;
+  }
+
+  .dark-card-inset {
+    background-color: #0B101D;
+    border: 1px solid #1A2336;
+    border-radius: 12px;
+  }
+
+  .glass-header {
+    background-color: rgba(15, 23, 42, 0.85);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid #1E293B;
+  }
+}
+
+/* MapLibre dark navigation controls override */
+.maplibregl-ctrl-group {
+  background-color: #0F172A !important;
+  border: 1px solid #1E293B !important;
+  border-radius: 12px !important;
+  overflow: hidden;
+  box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.5) !important;
+}
+
+.maplibregl-ctrl-group button {
+  border-bottom: 1px solid #1E293B !important;
+}
+
+.maplibregl-ctrl-group button span {
+  filter: invert(1) hue-rotate(180deg);
+}
